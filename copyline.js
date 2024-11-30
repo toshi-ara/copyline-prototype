@@ -1,4 +1,5 @@
 const ElInputText = document.getElementById("input_text");
+const ElOutputText = document.getElementById("output_text");
 const ElBtnCopy = document.getElementById("btn_copy");
 const ElBtnClear = document.getElementById("btn_clear");
 
@@ -69,14 +70,20 @@ function copy() {
         } else {
             navigator.clipboard.writeText(res).then(
                 () => {
-                    console.log("Success:", res);
+                    let Output = ElOutputText.innerText;
+                    Output = Output + res + "\n";
+                    ElOutputText.innerText = Output;
+                    // console.log("Success:", res);
                     i++;
-                    if (i >= N) {
+                    if (i == N) {
                         clearInterval(id);
+                        let Output = ElOutputText.innerText;
+                        Output = Output + "=== Copy end ===\n";
+                        ElOutputText.innerText = Output;
                     }
                 },
                 () => {
-                    console.log("Failed:", res);
+                    // console.log("Failed:", res);
                 },
             );
         }
@@ -89,8 +96,13 @@ function copy() {
 
 
 // add event handler
-ElBtnCopy.addEventListener("click", () => { copy() });
+ElBtnCopy.addEventListener("click", () => {
+    ElOutputText.innerText = "=== Copy start ===\n";
+    copy()
+});
+
 ElBtnClear.addEventListener("click", () => {
     ElInputText.value = "";
+    ElOutputText.innerText = "";
 });
 
