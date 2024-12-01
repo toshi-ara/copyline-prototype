@@ -1,9 +1,16 @@
 import { timeInterval } from "./setting"
-import { getTextArea, getTextAsList, getValidList } from "./functions"
+import { getTextAsList, getValidList } from "./functions"
 import { getMatchStr } from "./match"
 
 
+const ElInputText = <HTMLInputElement>document.getElementById("input_text");
 const ElOutputText = <HTMLElement>document.getElementById("output_text");
+
+
+// get text from textarea in HTML
+export function getTextArea() {
+    return ElInputText.value;
+}
 
 
 export function copyline() {

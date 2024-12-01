@@ -1,14 +1,6 @@
-const ElInputText = <HTMLInputElement>document.getElementById("input_text");
-
-
-// get text from textarea in HTML
-export function getTextArea() {
-    return ElInputText.value;
-}
-
 // split text by \r\n, \n or \r
 export function getTextAsList(text: string): string[] {
-    let list = text.split(/[\r\n|\n|\r]/);
+    let list = text.split(/\r\n|\n|\r/);
     return list;
 }
 
