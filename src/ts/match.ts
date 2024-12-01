@@ -15,7 +15,8 @@ const regexp4 = /^(.+?)\s+(#*|[○×]*)$/;
 
 
 export function getMatchStr(str: string): string {
-    const match = str.replace(regexp1, "$2")
+    const match = str
+        .replace(regexp1, "$2")
         .replace(regexp2, "$1")
         .replace(regexp3, "")
         .replace(regexp4, "$1");
