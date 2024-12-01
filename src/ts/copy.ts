@@ -7,37 +7,40 @@ const ElInputText = <HTMLInputElement>document.getElementById("input_text");
 const ElOutputText = <HTMLElement>document.getElementById("output_text");
 
 
-// get text from textarea in HTML
-export function getTextArea() {
-    return ElInputText.value;
+function displayMessage(str: string) {
+    let output = ElOutputText.innerText;
+    output = output + str;
+    ElOutputText.innerText = output;
 }
 
 
 export function copyline() {
-    const text = getTextArea();
+    const text = ElInputText.value;  // get text from textarea in HTML
     const validList = getValidList(getTextAsList(text));
 
     let fnClipboad = function(list: string[]) {
         const N = list.length;
-        let res = getMatchStr(list[i]);
+        if (N == 0) {
+            clearInterval(id);
+            displayMessage("No item is copied\n=== Copy end ===");
+        }
 
+        let res = getMatchStr(list[i]);
         if (res == "") {
-            i++;
+            i++;  // next item
         } else {
             navigator.clipboard.writeText(res).then(
                 () => {
-                    let Output = ElOutputText.innerText;
-                    Output = Output + res + "\n";
-                    ElOutputText.innerText = Output;
+                    displayMessage(res + "\n");
+
+                    // next item
                     i++;
                     if (i == N) {
                         clearInterval(id);
-                        let Output = ElOutputText.innerText;
-                        Output = Output + "=== Copy end ===\n";
-                        ElOutputText.innerText = Output;
+                        displayMessage( "=== Copy end ===");
                     }
                 },
-                () => {},
+                () => {}  // failed
             );
         }
     }
