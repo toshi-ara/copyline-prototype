@@ -1,4 +1,16 @@
+html {
+    font-family: sans-serif;
+    background: mintcream;
+}
+
 h3 {
     color: darkblue;
 };
+
+#buttons {
+    display:inline-block;
+}
+.buttons {
+    padding: 8px;
+}
 
