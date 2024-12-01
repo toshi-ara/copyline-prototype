@@ -9,7 +9,7 @@ const ElBtnClear = <HTMLInputElement>document.getElementById("btn_clear");
 
 // add event handler
 ElBtnCopy.addEventListener("click", () => {
-    ElOutputText.innerText = "=== Copy start ===\n";
+    ElOutputText.innerText = "=== Copy begin ===\n";
     copyline()
 });
 
