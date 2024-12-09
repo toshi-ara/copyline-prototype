@@ -108,20 +108,30 @@ web の入力項目などに順番に貼り付けることが容易にできま�
 [clibor_URL]:https://chigusa-web.com/
 [clibor_FIDO_LIFO]: https://chigusa-web.com/clibor/fifo-lifo/
 
-### (ToDo) Clibor の設定
-+ FIFOモード
+### Clibor の設定
++ FIFOモードへの変更
     + アイコンを右クリックするとメニュー画面が出るため
-      FIFOモードを選択する
+      FIFOモードを選択して下さい
 <img src="image/fig_set_clibor.png" alt="FIFOモード">
 
 + 設定を変更することで起動時からFIFOモードにすることが可能です（推奨）
+<img src="image/fig_setting_clibor_start.png" alt="設定：FIFOモード開始">
+
++ FIFOモードの設定
+    + 以下の3個にチェックを入れて下さい
+<img src="image/fig_setting_clibor_FIFO.png" alt="設定：FIFOモード開始">
+
++ クリップボード更新の時間設定
+    + 初期設定のままで大丈夫ですが、必要に応じて値を変更して下さい
+<img src="image/fig_setting_clibor_time.png" alt="設定：FIFOモード開始">
 
 
 ## 既知の問題点
 + コピー中にカーソルを他のウィンドウに移動させると
   コピーが停止します（これは仕様です）。
 + "クリップボードにコピーしたテキストや画像へのアクセス"
-  を許可する旨のメッセージが出た場合には許可して下さい
+  を許可する旨のメッセージが出た場合には許可を押して下さい
+<img src="image/fig_permission.png" alt="クリップボードへのアクセス許可">
 
 
 ## Release Notes
